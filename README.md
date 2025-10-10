@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Personal Portfolio (React + TypeScript + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, minimal personal portfolio using a strict palette:
+- Black `#000000`, Gray `#808080` / Section Gray `#1f1f1f`, White `#ffffff`.
 
-Currently, two official plugins are available:
+## Scripts
+- `npm run dev` — local development
+- `npm run build` — typecheck and build
+- `npm run preview` — preview production build
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech
+- React 19 + TypeScript
+- Tailwind CSS v4
+- React Icons
+- Vite
 
-## React Compiler
+## Content Editing
+- Update profile details in `src/App.tsx`:
+  - Header name and links
+  - Hero text, About copy
+  - Skills list
+  - Projects array (title, description, tech, links)
+  - Experience items (role, company, period, summary)
+  - Contact email and LinkedIn
+- Add your `public/resume.pdf` and update the resume link if needed.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Design System
+- Inter font loaded via Google Fonts in `index.html`
+- Base dark theme with semantic helpers in `src/index.css`:
+  - `.bg-section`, `.text-muted`, `.border-muted`, `.animate-fade-up`
+- Spacing uses Tailwind utilities; sections are wrapped with a responsive container.
 
-## Expanding the ESLint configuration
+## Deploy to Vercel
+1. Push to GitHub.
+2. Import the repo in Vercel.
+3. Framework preset: Vite (auto-detected)
+4. Build Command: `npm run build`
+5. Output Directory: `dist`
+6. Set `installCommand` to `npm ci` (optional). `vercel.json` is included.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Notes
+- Palette is enforced across components; avoid adding new colors.
+- Keep copy concise; focus on impact and outcomes.
