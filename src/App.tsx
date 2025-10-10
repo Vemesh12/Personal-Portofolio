@@ -34,7 +34,9 @@ const TypingText = ({ text }: { text: string }) => {
 const Header = () => (
   <header className="sticky top-0 z-20 backdrop-blur bg-black/50 border-b border-muted">
     <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 h-16 flex items-center justify-between">
-      <a href="#home" className="font-semibold tracking-tight hover:opacity-80 transition-opacity">Vemesh Bypureddi</a>
+      <a href="#home" aria-label="Home" className="block hover:opacity-90 transition-opacity">
+        <img src="/text-1760088347429.png" alt="Vemesh Bypureddi" className="h-7 md:h-9 lg:h-10 w-auto object-contain"/>
+      </a>
       <nav className="hidden md:flex items-center gap-6 text-sm text-muted">
         <a className="hover:text-white transition-colors" href="#about">About</a>
         <a className="hover:text-white transition-colors" href="#skills">Skills</a>
@@ -42,8 +44,8 @@ const Header = () => (
         <a className="hover:text-white transition-colors" href="#experience">Experience</a>
         <a className="hover:text-white transition-colors" href="#contact">Contact</a>
       </nav>
-      <div className="flex items-center gap-4">
-        <a href="#projects" className="text-sm px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded">View Work</a>
+      <div className="flex items-center gap-4 ">
+        <a href="#projects" className="hidden md:block text-sm text-nowrap px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded">View Work</a>
         <a href="/VemeshBypureddi_Resume.pdf" download="VemeshBypureddi_Resume.pdf" className="text-sm px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded inline-flex items-center gap-2">
           <FiDownload/> <span>Resume</span>
         </a>
@@ -182,7 +184,7 @@ const Projects = () => {
       description: 'Flask app using Google Gemini AI to generate detailed summaries from YouTube transcripts.',
       tech: ['Python', 'Flask', 'Gemini AI'],
       github: 'https://github.com/yourname/youtube-transcript-summarizer',
-      demo: 'https://youtube-transcript-summarizer.vercel.app',
+      //demo: 'https://youtube-transcript-summarizer.vercel.app',
     },
     {
       title: 'Disease Predictor & AI Prescription',
