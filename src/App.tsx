@@ -46,7 +46,7 @@ const Header = () => (
       </nav>
       <div className="flex items-center gap-4 ">
         <a href="#projects" className="hidden md:block text-sm text-nowrap px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded">View Work</a>
-        <a href="/VemeshBypureddi_Resume.pdf" download="VemeshBypureddi_Resume.pdf" className="text-sm px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded inline-flex items-center gap-2">
+        <a href="/Vemesh_FullStackDeveloper.pdf" download="Vemesh_FullStackDeveloper.pdf" className="text-sm px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded inline-flex items-center gap-2">
           <FiDownload/> <span>Resume</span>
         </a>
       </div>
@@ -106,49 +106,56 @@ const Hero = () => (
 const About = () => (
   <Section id="about" className="bg-section border-y border-muted" fit={false}>
     <div className="grid md:grid-cols-12 gap-8">
-  <div className="md:col-span-5">
-    <motion.h2
-      className="text-4xl font-semibold tracking-tight"
-      initial={{ opacity: 0, y: -50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.5 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
-    >
-      About
-    </motion.h2>
-    <motion.p
-      className="text-muted mt-2"
-      initial={{ opacity: 0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.6 }}
-      transition={{ duration: 1, ease: 'easeOut', delay: 0.1 }}
-    >
-      I am a Full Stack Developer passionate about building scalable, responsive, and user-friendly web applications. My experience spans both frontend and backend development, primarily in edtech and business automation.
-    </motion.p>
-  </div>
+      <div className="md:col-span-5">
+        <motion.h2
+          className="text-4xl font-semibold tracking-tight"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
+          About
+        </motion.h2>
+        <motion.p
+          className="text-muted mt-2"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.6 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.1 }}
+        >
+          Full-stack Software Engineer with 1+ year of production experience building
+          and shipping scalable web applications. I care about clean code, real impact,
+          and systems that actually work in production.
+        </motion.p>
+      </div>
 
-  <div className="md:col-span-7 text-muted leading-relaxed space-y-4">
-    <motion.p
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.5 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
-    >
-      Proficient in React (Hooks, Context API), TypeScript, Node.js, Express.js, and Tailwind CSS, with a strong grasp of RESTful API development and database management using SQL and MongoDB.  
-      I have collaborated in Agile teams, written clean, maintainable code, and deployed applications to cloud platforms.
-    </motion.p>
+      <div className="md:col-span-7 text-muted leading-relaxed space-y-4">
+        <motion.p
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
+          I work with React.js, TypeScript, Node.js, PostgreSQL, and AWS — from
+          building responsive frontends to designing backend APIs and deploying
+          cloud-hosted applications. At nRich IT, I contributed to migrating legacy
+          PHP systems to Node.js, integrated Twilio Flex for real-time customer
+          communication, and shipped production-grade interfaces used by real users.
+        </motion.p>
 
-    <motion.p
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.5 }}
-      transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-    >
-      I am seeking opportunities in fast-paced, product-based organizations where I can contribute to building cohesive systems that scale, while continuously learning and enhancing my skills.
-    </motion.p>
-  </div>
-</div>
-
+        <motion.p
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+        >
+          Outside of work, I built WithUs — a full-stack Farm-to-Door delivery
+          platform — end-to-end, from database design to AWS deployment. I am looking
+          for opportunities in fast-paced, product-driven teams where I can contribute
+          to building things that scale and matter.
+        </motion.p>
+      </div>
+    </div>
   </Section>
 )
 
@@ -180,25 +187,23 @@ const Skills = () => (
 const Projects = () => {
   const projects: Project[] = useMemo(() => ([
     {
-      title: 'YouTube Transcript Summarizer',
-      description: 'Flask app using Google Gemini AI to generate detailed summaries from YouTube transcripts.',
-      tech: ['Python', 'Flask', 'Gemini AI'],
-      github: 'https://github.com/yourname/youtube-transcript-summarizer',
-      //demo: 'https://youtube-transcript-summarizer.vercel.app',
+      title: 'WithUs — Farm to Door Delivery',
+      description: 'Full-stack delivery platform built end-to-end — product listings, cart, order placement, and an admin dashboard. Deployed on Vercel (frontend) and AWS EC2/RDS/S3 (backend).',
+      tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'AWS'],
+      demo: 'https://www.withusforu.com',
     },
     {
       title: 'Disease Predictor & AI Prescription',
-      description: 'ML-based disease prediction with audio prescription in English and Telugu, UI in Streamlit.',
+      description: 'ML-based disease prediction from user symptoms with multilingual audio prescriptions in English and Telugu — making healthcare tools accessible to regional users.',
       tech: ['Python', 'scikit-learn', 'Flask', 'Streamlit'],
       github: 'https://github.com/Vemesh12/Disease-Predictor-and-AI-Prescription-Generator.git',
     },
     {
-      title: 'WithUs - Farm to Door',
-      description: 'Full-stack delivery platform with responsive UI, product listings, orders, and reviews.',
-      tech: ['React', 'TypeScript', 'Tailwind', 'FastAPI', 'PostgreSQL'],
-      github: 'https://github.com/Vemesh12/WithUs-Project.git',
+      title: 'YouTube Transcript Summarizer',
+      description: 'AI-powered web app that extracts YouTube transcripts and generates concise summaries using Google Gemini AI, with a backend pipeline for text chunking and processing.',
+      tech: ['Python', 'Flask', 'Google Gemini AI'],
+      github:'https://github.com/Vemesh12/Youtube-Transcript-Summarizer.git',
     },
-    
   ]), [])
 
   return (
@@ -216,7 +221,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.1 }}
-          >Selected work that reflects my approach.</motion.p>
+          >Things I've built and shipped.</motion.p>
         </div>
         <a href="https://github.com/Vemesh12" className="text-muted hover:text-white transition-colors inline-flex items-center gap-2">
           <FiGithub/> <span>GitHub</span>
@@ -256,40 +261,105 @@ const Projects = () => {
   )
 }
 
+const experiences = [
+  {
+    role: 'Software Engineer',
+    company: 'nRich IT Consulting Services',
+    location: 'Visakhapatnam, India',
+    period: ['Nov 2025', 'Present'],
+    current: true,
+    bullets: [
+      'Contributed to migrating legacy PHP backend to Node.js across mobile app, website, and admin portal — reducing technical debt and simplifying deployments.',
+      'Integrated Twilio Flex for real-time live chat support across web and mobile platforms.',
+      'Built production-grade responsive frontend with React.js, TypeScript, and Tailwind CSS.',
+      'Implemented rate limiting and request throttling to improve backend reliability under load.',
+    ],
+    tags: ['Node.js', 'React.js', 'TypeScript', 'PostgreSQL', 'AWS', 'Twilio'],
+  },
+  {
+    role: 'Full Stack Developer Intern',
+    company: 'Edubot Software and Services',
+    location: 'Vijayawada, India',
+    period: ['2024', '2025'],
+    current: false,
+    bullets: [
+      'Built responsive, accessible frontends using React.js, TypeScript, Tailwind CSS, and Shadcn UI.',
+      'Designed and implemented RESTful APIs with Node.js and Express.js across multiple features.',
+      'Collaborated in Agile sprints with designers, backend engineers, and product managers.',
+    ],
+    tags: ['React.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'PostgreSQL'],
+  },
+]
+
 const Experience = () => (
   <Section id="experience" fit={false}>
-    <motion.h2 className="text-4xl font-semibold tracking-tight"
-      initial={{ opacity: 0, y: -50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.5 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
-    >Experience</motion.h2>
-    <div className="mt-6 space-y-4">
-      {[
-        {
-          role: 'Full Stack Developer Intern',
-          company: 'Edubot Software and Services',
-          period: '2024 — 2025 · Vijayawada, India',
-          summary: 'Built responsive, scalable frontends (React, TypeScript, Tailwind, Shadcn UI). Implemented REST APIs with Node.js/Express. Deployed the official website and collaborated in Agile sprints.'
-        }
-      ].map((e) => (
-        <motion.div key={e.role} className="border border-muted rounded p-4 hover:bg-section transition-colors"
-          initial={{ opacity: 0, y: 40 }}
+    <motion.h2 className="text-4xl font-semibold tracking-tight mb-8"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+          >Work Experience</motion.h2>
+
+    <div className="flex flex-col">
+      {experiences.map((e, i) => (
+        <motion.div
+          key={e.role}
+          className="grid gap-0"
+          style={{ gridTemplateColumns: '140px 1fr' }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: i * 0.1 }}
         >
-          <div className="flex justify-between gap-4">
-            <p className="font-medium">{e.role} · {e.company}</p>
-            <p className="text-sm text-muted">{e.period}</p>
+          {/* Left — dates */}
+          <div className="pr-6 pt-6 pb-6 flex flex-col gap-1">
+            <span className="text-xs text-muted font-mono leading-snug">
+              {e.period[0]}<br />{e.period[1]}
+            </span>
+            {e.current && (
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-500 font-medium w-fit">
+                Current
+              </span>
+            )}
           </div>
-          <p className="text-sm text-muted mt-2">{e.summary}</p>
+
+          {/* Timeline dot + line */}
+          <div className="relative">
+            <div className="absolute -left-[17px] top-[30px] w-2 h-2 rounded-full bg-white border border-muted" />
+            {i < experiences.length - 1 && (
+              <div className="absolute -left-[13px] top-[30px] bottom-0 w-px bg-muted/30" />
+            )}
+
+            {/* Right — content */}
+            <div className={`pl-8 pt-6 pb-6 ${i < experiences.length - 1 ? 'border-b border-muted/20' : ''}`}>
+              <p className="font-medium text-[15px]">{e.role}</p>
+              <p className="text-sm text-muted mt-0.5">{e.company}</p>
+              <p className="text-xs text-muted/60 mt-0.5">{e.location}</p>
+
+              <ul className="mt-3 space-y-1.5">
+                {e.bullets.map((b) => (
+                  <li key={b} className="text-sm text-muted pl-3.5 relative leading-relaxed
+                    before:content-[''] before:absolute before:left-0 before:top-[9px]
+                    before:w-1 before:h-1 before:rounded-full before:bg-muted/50">
+                    {b}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-1.5 mt-4">
+                {e.tags.map((t) => (
+                  <span key={t} className="text-[11px] px-2.5 py-0.5 rounded-full border border-muted/40 text-muted font-mono">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
       ))}
     </div>
   </Section>
 )
-
 const Contact = () => (
   <Section id="contact" className="bg-section border-y border-muted" fit={false}>
     <div className="grid md:grid-cols-12 gap-8 items-center">
