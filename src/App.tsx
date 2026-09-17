@@ -46,7 +46,7 @@ const Header = () => (
       </nav>
       <div className="flex items-center gap-4 ">
         <a href="#projects" className="hidden md:block text-sm text-nowrap px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded">View Work</a>
-        <a href="/Vemesh_FullStackDeveloper.pdf" download="Vemesh_FullStackDeveloper.pdf" className="text-sm px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded inline-flex items-center gap-2">
+        <a href="/VemeshBypureddi.pdf" download="Vemesh_FullStackDeveloper.pdf" className="text-sm px-3 py-1.5 border border-muted hover:bg-section transition-colors rounded inline-flex items-center gap-2">
           <FiDownload/> <span>Resume</span>
         </a>
       </div>
@@ -123,7 +123,7 @@ const About = () => (
           viewport={{ once: false, amount: 0.6 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.1 }}
         >
-          Full-stack Software Engineer with 1+ year of production experience building
+          Full Stack Developer with internship experience building
           and shipping scalable web applications. I care about clean code, real impact,
           and systems that actually work in production.
         </motion.p>
@@ -138,9 +138,9 @@ const About = () => (
         >
           I work with React.js, TypeScript, Node.js, PostgreSQL, and AWS — from
           building responsive frontends to designing backend APIs and deploying
-          cloud-hosted applications. At nRich IT, I contributed to migrating legacy
-          PHP systems to Node.js, integrated Twilio Flex for real-time customer
-          communication, and shipped production-grade interfaces used by real users.
+          cloud-hosted applications. As a Full Stack Developer Intern at Edubot,
+          I built accessible UIs, implemented REST APIs, and collaborated in
+          Agile teams to ship features end-to-end.
         </motion.p>
 
         <motion.p
@@ -262,20 +262,6 @@ const Projects = () => {
 }
 
 const experiences = [
-  {
-    role: 'Software Engineer',
-    company: 'nRich IT Consulting Services',
-    location: 'Visakhapatnam, India',
-    period: ['Nov 2025', 'Present'],
-    current: true,
-    bullets: [
-      'Contributed to migrating legacy PHP backend to Node.js across mobile app, website, and admin portal — reducing technical debt and simplifying deployments.',
-      'Integrated Twilio Flex for real-time live chat support across web and mobile platforms.',
-      'Built production-grade responsive frontend with React.js, TypeScript, and Tailwind CSS.',
-      'Implemented rate limiting and request throttling to improve backend reliability under load.',
-    ],
-    tags: ['Node.js', 'React.js', 'TypeScript', 'PostgreSQL', 'AWS', 'Twilio'],
-  },
   {
     role: 'Full Stack Developer Intern',
     company: 'Edubot Software and Services',
