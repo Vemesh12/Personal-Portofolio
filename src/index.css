@@ -1,15 +1,31 @@
 @import "tailwindcss";
 
-/* Global theme base: black background, gray text, Inter font */
+/* Strict palette: black, grays, white */
 :root {
   --black: #000000;
-  --gray: #808080;
-  --gray-dark: #1f1f1f;
+  --gray: #8a8a8a;
+  --gray-dark: #0f0f0f;
+  --border: #262626;
   --white: #ffffff;
+}
+
+@theme {
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* sticky header height */
 }
 
 body {
@@ -19,23 +35,37 @@ body {
   background-color: var(--black);
   color: var(--white);
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  overflow-x: hidden; /* prevent sideways scroll during animations */
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Utility helpers for the limited palette */
-.bg-section {
-  background-color: var(--gray-dark);
-}
-.text-muted {
-  color: var(--gray);
-}
-.border-muted {
-  border-color: var(--gray-dark);
+::selection {
+  background: var(--white);
+  color: var(--black);
 }
 
-/* Minimal fade/slide entrance animation */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
 }
-.animate-fade-up { animation: fadeUp .6s ease-out both; }
+
+/* Subtle film grain over everything */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Semantic helpers for the palette */
+.bg-section { background-color: var(--gray-dark); }
+.text-muted { color: var(--gray); }
+.border-muted { border-color: var(--border); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee, .animate-blink, .animate-ping { animation: none; }
+}

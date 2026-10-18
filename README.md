@@ -1,43 +1,37 @@
-# Personal Portfolio (React + TypeScript + Tailwind)
+# Personal Portfolio — Vemesh Bypureddi
 
-Modern, minimal personal portfolio using a strict palette:
-- Black `#000000`, Gray `#808080` / Section Gray `#1f1f1f`, White `#ffffff`.
+Animated single-page portfolio built with React 19, TypeScript, Tailwind CSS v4, Framer Motion, and React Three Fiber.
 
 ## Scripts
 - `npm run dev` — local development
 - `npm run build` — typecheck and build
-- `npm run preview` — preview production build
+- `npm run preview` — preview the production build
+- `npm run lint` — lint
 
-## Tech
-- React 19 + TypeScript
-- Tailwind CSS v4
-- React Icons
-- Vite
+## Editing content
+All text lives in [`src/data.ts`](src/data.ts): profile, about, skills, experience, projects, education, certifications, and nav links.
+Replace `public/VemeshBypureddi.pdf` to update the downloadable resume.
 
-## Content Editing
-- Update profile details in `src/App.tsx`:
-  - Header name and links
-  - Hero text, About copy
-  - Skills list
-  - Projects array (title, description, tech, links)
-  - Experience items (role, company, period, summary)
-  - Contact email and LinkedIn
-- Add your `public/resume.pdf` and update the resume link if needed.
+## Structure
+```
+src/
+  data.ts              content
+  App.tsx              page composition
+  sections/            Hero, About, Skills, Experience, Projects, Education, Contact/Footer
+  components/
+    Scene3D.tsx        three.js scenes (hero particles, About orb) — lazy-loaded
+    SkillSphere.tsx    draggable 3D skill globe (CSS transforms)
+    TiltCard.tsx       3D tilt + glare cards
+    Magnetic.tsx       magnetic buttons
+    Effects.tsx        smooth scroll (Lenis), scroll progress, cursor, intro loader
+    Header.tsx         sticky nav with active-section underline + mobile menu
+    Reveal.tsx         scroll-reveal / stagger helpers
+```
 
-## Design System
-- Inter font loaded via Google Fonts in `index.html`
-- Base dark theme with semantic helpers in `src/index.css`:
-  - `.bg-section`, `.text-muted`, `.border-muted`, `.animate-fade-up`
-- Spacing uses Tailwind utilities; sections are wrapped with a responsive container.
+## Design
+- Strict palette: black, grays, white (tokens in `src/index.css`).
+- Inter + JetBrains Mono via Google Fonts.
+- All motion respects `prefers-reduced-motion`; 3D scenes pause when off-screen.
 
-## Deploy to Vercel
-1. Push to GitHub.
-2. Import the repo in Vercel.
-3. Framework preset: Vite (auto-detected)
-4. Build Command: `npm run build`
-5. Output Directory: `dist`
-6. Set `installCommand` to `npm ci` (optional). `vercel.json` is included.
-
-## Notes
-- Palette is enforced across components; avoid adding new colors.
-- Keep copy concise; focus on impact and outcomes.
+## Deploy
+Vercel (Vite preset). `vercel.json` is included. After deploying, set the absolute site URL on the `og:image` tags in `index.html` so link previews work everywhere.
