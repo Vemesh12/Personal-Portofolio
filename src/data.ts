@@ -73,6 +73,7 @@ export const projects: Project[] = [
     ],
     tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Python', 'FastAPI', 'OpenAI / Gemini API', 'PostgreSQL'],
     github: 'https://github.com/Vemesh12/StyleIQ.git',
+    demo: 'https://style-iq-six.vercel.app/',
   },
   {
     title: 'WithUs — Farm to Door Delivery',
